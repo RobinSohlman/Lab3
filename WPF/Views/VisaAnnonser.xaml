@@ -1,0 +1,170 @@
+﻿<Window x:Class="WPF.Views.VisaAnnonser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.Views"
+        xmlns:vm="clr-namespace:WPF.ViewModels.VisaAnnonser"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:VisaAnnonserModel}"
+        Title="VisaAnnonser" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <!-- Öppnar andra griden - ska innehålla radio buttens -->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- Öppnar mini griden - ska innehålla radio buttens -->
+            <Grid Grid.Row="1" Grid.Column="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <RadioButton Grid.Row="0" Grid.Column="0" GroupName="Parkering" IsChecked="{Binding FilterJaParkering, Mode=TwoWay}"/>
+                <RadioButton Grid.Row="0" Grid.Column="1" GroupName="Parkering" IsChecked="{Binding FilterNejParkering, Mode=TwoWay}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Ja" FontSize="15"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Nej" FontSize="15"/>
+            </Grid>
+            <!-- Stäng mini griden - ska innehålla radio buttens -->
+            <!-- Öppnar mini griden - ska innehålla radio buttens -->
+            <Grid Grid.Row="1" Grid.Column="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <RadioButton Grid.Row="0" Grid.Column="0" GroupName="Husdjur" IsChecked="{Binding FilterJaHusdjur, Mode=TwoWay}"/>
+                <RadioButton Grid.Row="0" Grid.Column="1" GroupName="Husdjur" IsChecked="{Binding FilterNejHusdjur, Mode=TwoWay}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Ja" FontSize="15"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Nej" FontSize="15"/>
+            </Grid>
+            <!-- Stäng mini griden - ska innehålla radio buttens -->
+            <!-- Öppnar mini griden - ska innehålla radio buttens -->
+            <Grid Grid.Row="1" Grid.Column="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <RadioButton Grid.Row="0" Grid.Column="0" GroupName="Rokning" IsChecked="{Binding FilterJaRokning, Mode=TwoWay}"/>
+                <RadioButton Grid.Row="0" Grid.Column="1" GroupName="Rokning" IsChecked="{Binding FilterNejRokning, Mode=TwoWay}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Ja" FontSize="15"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Nej" FontSize="15"/>
+            </Grid>
+            <!-- Stäng mini griden - ska innehålla radio buttens -->
+            <!-- Öppnar mini griden - ska innehålla radio buttens -->
+            <Grid Grid.Row="1" Grid.Column="14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <RadioButton Grid.Row="0" Grid.Column="0" GroupName="Wifi" IsChecked="{Binding FilterJaWIFI, Mode=TwoWay}"/>
+                <RadioButton Grid.Row="0" Grid.Column="1" GroupName="Wifi" IsChecked="{Binding FilterNejWIFI, Mode=TwoWay}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Ja" FontSize="15"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Nej" FontSize="15"/>
+            </Grid>
+            <!-- Stäng mini griden - ska innehålla radio buttens -->
+            <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding FilterStad}"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding FilterAntalRum}"/>
+            <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding FilterPPN}"/>
+            <TextBox Grid.Row="1" Grid.Column="6" Text="{Binding FilterBetyg}"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Stad" FontSize="15"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Antal Rum" FontSize="15"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="Pris Per Natt" FontSize="15"/>
+            <TextBlock Grid.Row="0" Grid.Column="6" Text="Betyg" FontSize="15"/>
+            <TextBlock Grid.Row="0" Grid.Column="8" Text="Parkering" FontSize="15"/>
+            <TextBlock Grid.Row="0" Grid.Column="10" Text="Husdjur" FontSize="15"/>
+            <TextBlock Grid.Row="0" Grid.Column="12" Text="Rökning" FontSize="15"/>
+            <TextBlock Grid.Row="0" Grid.Column="14" Text="Wifi" FontSize="15"/>
+        </Grid>
+        <!-- Stänger andra griden - ska innehålla radio buttens -->
+        <!-- Öppnar andra griden - ska innehålla radio buttens -->
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="1" Grid.Column="2" Content="Filtrera" FontSize="20" Command="{Binding NewVisaAnnonser}"/>
+        </Grid>
+        <!-- Stänger andra griden - ska innehålla radio buttens -->
+        <!-- Öppnar andra griden - ska innehålla radio buttens -->
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="1" Content="Välj Annons" FontSize="20"  Command="{Binding OpenNewSkapaBokningModel}" Margin="0,0,-27,0"/>
+        </Grid>
+        <!-- Stänger andra griden - ska innehålla radio buttens -->
+        <!-- Stänger andra griden - ska innehålla radio buttens -->
+        <!-- <ListBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding BostadsAnnonser}" DisplayMemberPath="BostadsAnnonsID" BorderBrush="Black"/>-->
+        <ListView Grid.Row="2" Name="lvUsers" ItemsSource="{Binding BostadsAnnonser}" SelectedItem="{Binding ValdAnnons, Mode=TwoWay}" Grid.ColumnSpan="2" Margin="48,19,2,1" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="baID" Width="30" DisplayMemberBinding="{Binding Annons.BostadsAnnonsID}" />
+                    <GridViewColumn Header="Beskrivning" Width="150" DisplayMemberBinding="{Binding Annons.Beskrivning}" />
+                    <GridViewColumn Header="Stad" Width="100" DisplayMemberBinding="{Binding Bostad.Stad}" />
+                    <GridViewColumn Header="Adress" Width="100" DisplayMemberBinding="{Binding Bostad.Adress}" />
+                    <GridViewColumn Header="PPN" Width="50" DisplayMemberBinding="{Binding Annons.PPN}" />
+                    <GridViewColumn Header="AntalRum" Width="75" DisplayMemberBinding="{Binding Annons.AntalRum}" />
+                    <GridViewColumn Header="Parkering" Width="50"  DisplayMemberBinding="{Binding Annons.Parkering}" />
+                    <GridViewColumn Header="Husdjur" Width="50" DisplayMemberBinding="{Binding Annons.Husdjur}" />
+                    <GridViewColumn Header="Rökning" Width="50" DisplayMemberBinding="{Binding Annons.Rokning}" />
+                    <GridViewColumn Header="Wifi" Width="50"  DisplayMemberBinding="{Binding Annons.WIFI}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

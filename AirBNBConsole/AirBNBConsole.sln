@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirBNBConsole", "AirBNBConsole\AirBNBConsole.csproj", "{66154E9D-FB95-4796-86FD-23DF977B1AA4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AAD0E40D-E7C0-4B4C-9004-28A339D1D228} = {AAD0E40D-E7C0-4B4C-9004-28A339D1D228}
+		{D74AEB44-3F1C-443A-8BD7-A36A52621D28} = {D74AEB44-3F1C-443A-8BD7-A36A52621D28}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirBNBBL", "AirBNBBL\AirBNBBL.csproj", "{AAD0E40D-E7C0-4B4C-9004-28A339D1D228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirBNBDataLayer", "AirBNBDataLayer\AirBNBDataLayer.csproj", "{D74AEB44-3F1C-443A-8BD7-A36A52621D28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66154E9D-FB95-4796-86FD-23DF977B1AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66154E9D-FB95-4796-86FD-23DF977B1AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66154E9D-FB95-4796-86FD-23DF977B1AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66154E9D-FB95-4796-86FD-23DF977B1AA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD0E40D-E7C0-4B4C-9004-28A339D1D228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD0E40D-E7C0-4B4C-9004-28A339D1D228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD0E40D-E7C0-4B4C-9004-28A339D1D228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD0E40D-E7C0-4B4C-9004-28A339D1D228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74AEB44-3F1C-443A-8BD7-A36A52621D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74AEB44-3F1C-443A-8BD7-A36A52621D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74AEB44-3F1C-443A-8BD7-A36A52621D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74AEB44-3F1C-443A-8BD7-A36A52621D28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9D0DB27-3E90-4DF2-8DD4-1D385FEB013C}
+	EndGlobalSection
+EndGlobal

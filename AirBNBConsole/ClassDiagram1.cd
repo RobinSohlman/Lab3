@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AirBNBDataLayer.Internals.AnvandarRepository">
+    <Position X="1.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AirBNBDataLayer.Internals.BostadRepository">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirBNBDataLayer.Internals.BokningRepository">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirBNBDataLayer.Internals.BostadsAnnonsRepository">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirBNBDataLayer.Internals.GenericRepository&lt;TEntity&gt;" Collapsed="true">
+    <Position X="5.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AirBNBDataLayer.Anvandare">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AirBNBDataLayer.Bokning">
+    <Position X="11.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AirBNBDataLayer.Bostad">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AirBNBDataLayer.BostadsAnnons">
+    <Position X="14" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AirBNBDataLayer.Review">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="AirBNBDataLayer.Internals.IAnvandareRepository">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="AirBNBDataLayer.Internals.IBokningRepository">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="AirBNBDataLayer.Internals.IBostadRepository">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="AirBNBDataLayer.Internals.IBostadsAnnonsRepository">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="AirBNBDataLayer.Internals.IGenericRepository&lt;T&gt;" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="AirBNBDataLayer.Internals.IReviewRepository">
+    <Position X="1.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

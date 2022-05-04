@@ -1,0 +1,62 @@
+﻿<Window x:Class="WPF.Views.LoggaIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.Views"
+        xmlns:vm="clr-namespace:WPF.ViewModels.LoggaIn"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:LoggaInModel}"
+        Title="LoggaIn" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="125"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Padding="16" Text="Välkomen till AirBNB" TextAlignment="Center" FontSize="30" FontWeight="Normal" FontFamily="X-Files" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="1" Padding="16" Text="Var säll och logga in genom att fylla i dinna inloggnings uppgifter!" TextAlignment="Center" FontSize="19" FontWeight="Normal" FontFamily="X-Files" Grid.ColumnSpan="2"/>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="E-mail" FontSize="30"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Epost, Mode=TwoWay}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Lösenord" FontSize="30"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Losenord, Mode=TwoWay}"/>
+        </Grid>
+        <!-- Avslut/Påbörjan -->
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Grid.Column="2" Content="Logga In" Command="{Binding NewLoggaInCommand}" FontSize="20"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="17" Grid.ColumnSpan="3">  
+                 <Hyperlink
+                     Command="{Binding OpenNewSkapaAnvandareCommand}"
+                     FontStyle="Normal">Registrera dig här
+                 </Hyperlink> om du inte har ett konto än
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>

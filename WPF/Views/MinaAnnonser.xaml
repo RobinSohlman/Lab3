@@ -1,0 +1,43 @@
+﻿<Window x:Class="WPF.Views.MinaAnnonser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:WPF.ViewModels.MinaAnnonser"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MinaAnnonserModel}"
+        Title="MinaAnnonser" Height="421.296" Width="583.739">
+    <Grid Margin="10,0,0,-1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Padding="10" Text="Mina Annonser" TextAlignment="Center" FontSize="20" FontWeight="Bold" FontFamily="X-Files" Grid.ColumnSpan="2"/>
+
+        <Grid Grid.Row="1" Margin="39,10,0,35" RenderTransformOrigin="0.524,0.505" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListView Margin="10,10,41,10" ItemsSource="{Binding BostadsAnnonser}" Name="lvUsers" SelectedItem="{Binding ValdAnnons, Mode=TwoWay}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="AnnonsID" Width="120" DisplayMemberBinding="{Binding Annons.BostadsAnnonsID}" />
+                        <GridViewColumn Header="Adress" Width="250" DisplayMemberBinding="{Binding Bostad.Adress}" />
+                        <GridViewColumn Header="Stad" Width="100" DisplayMemberBinding="{Binding Bostad.Stad}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+        <Button Grid.Row="2" Content="Välj" Margin="411,10,50,10" Padding="10" Command="{Binding OpenNewHanteraEnAnnonsCommand}" Grid.ColumnSpan="2" />
+
+    </Grid>
+</Window>

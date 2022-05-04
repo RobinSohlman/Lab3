@@ -1,0 +1,66 @@
+﻿<Window x:Class="WPF.Views.Boka"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.Views"
+        xmlns:vm="clr-namespace:WPF.ViewModels.SkapaBokning"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:SkapaBokningModel}"
+        Title="Boka" Height="800" Width="620">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Padding="10" Text="Bokning" TextAlignment="Center" FontSize="25" FontWeight="Normal" FontFamily="X-Files"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Stad}" Margin="10,10,428,511"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Adress}" Margin="10,40,428,481" RenderTransformOrigin="0.464,1.203"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding PPN}" Margin="10,70,428,456"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Beskrivning}" Margin="10,247,282,238"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding AntalRum}" Margin="10,100,428,421" RenderTransformOrigin="0.42,3.606"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding WIFI}" Margin="10,130,428,395"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Parkering}" Margin="10,156,428,364"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Husdjur}" Margin="10,187,428,334"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Rokning}" Margin="10,217,428,304"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Recensioner" Margin="10,331,508,191"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Betyg" Margin="350,277,201,249" RenderTransformOrigin="3.035,0.565"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Skriv en recension" Margin="350,336,141,191"/>
+        <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding AntalPersoner}" Margin="440,204,67,321"/>
+        <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Betyg}" Margin="350,302,192,218"/>
+        <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Recension}" Margin="350,360,10,10"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Antal personer" Margin="440,187,66,336" RenderTransformOrigin="1.63,0.854"/>
+        <ListView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding reviews}" Margin="10,360,282,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Betyg" Width="100" DisplayMemberBinding="{Binding Betyg }" />
+                    <GridViewColumn Header="Resencion" Width="100" DisplayMemberBinding="{Binding Recension }" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Skapa Recension" Command="{Binding NewSkapaRecensionCommand}" Margin="380,546,39,125" Grid.Row="1" Grid.RowSpan="2"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="2" Content="Boka" Margin="0,-318,22,438" Padding="10" Command="{Binding NewSkapaBokningCommand}" RenderTransformOrigin="0.655,0.573" />
+            <Calendar x:Name="SlutCalendar" SelectedDate="{Binding SlutDatum}" Margin="0,-536,1,536" Grid.Column="2"/>
+            <Calendar x:Name="StartCalendar" SelectedDate="{Binding StartDatum}"  Margin="1,-536,0,536" Grid.Column="1"/>
+            <Image Name="img" 
+                   Margin="1,-347,0,0" 
+                   HorizontalAlignment="Left" 
+                   Height="109" 
+                   VerticalAlignment="Top" 
+                   Width="121" 
+                   Stretch="Fill" 
+                   Source="{Binding BildURL}" Grid.Column="1"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

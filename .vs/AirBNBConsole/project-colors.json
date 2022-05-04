@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d74aeb44-3f1c-443a-8bd7-a36a52621d28": {
+      "ProjectGuid": "d74aeb44-3f1c-443a-8bd7-a36a52621d28",
+      "DisplayName": "AirBNBDataLayer",
+      "ColorIndex": 0
+    },
+    "c355d1ae-d593-485b-a789-db2125c19680": {
+      "ProjectGuid": "c355d1ae-d593-485b-a789-db2125c19680",
+      "DisplayName": "WPF",
+      "ColorIndex": 1
+    },
+    "aad0e40d-e7c0-4b4c-9004-28a339d1d228": {
+      "ProjectGuid": "aad0e40d-e7c0-4b4c-9004-28a339d1d228",
+      "DisplayName": "AirBNBBL",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

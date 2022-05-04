@@ -1,0 +1,71 @@
+﻿<Window x:Class="WPF.Views.Menyn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.Views"
+        xmlns:vm="clr-namespace:WPF.ViewModels.Menyn"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MenyModel}"
+        Title="Menyen" Height="500" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="125"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Content="Skapa annons" Padding="10" FontSize="14" Command="{Binding OpenNewSkapaAnnonsCommand}"/>
+            <Button Grid.Row="2" Grid.Column="0" Content="Browsa annonser"  Padding="10" FontSize="14" Command="{Binding OpenNewVisaAnnonserCommand}"/>
+            <Button Grid.Row="4" Grid.Column="0" Content="Egna annonser"  Padding="10" FontSize="14" Command="{Binding OpenNewMinaAnnonserCommand}"/>
+        </Grid>
+        <TextBlock Grid.Row="0" Grid.Column="0"  Padding="16" Text="Välkommen"  TextAlignment="Center" FontSize="25" FontWeight="Normal" FontFamily="X-Files" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <Grid Grid.Row="3" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+
+        </Grid>
+        <!--<ListBox Grid.Row="1" Grid.Column="3" DisplayMemberPath="Name" Background="Blue" Grid.RowSpan="2"/> -->
+        <ListView Grid.Column="2" Name="lvUsers" ItemsSource="{Binding RelevantaBokningar}" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="125,10.667,82.333,149.667" Grid.Row="1" SelectedItem="{Binding ValdBokning, Mode=TwoWay}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="KundID" Width="30" DisplayMemberBinding="{Binding Bokning.KundID}" />
+                    <GridViewColumn Header="StartDatum" Width="150" DisplayMemberBinding="{Binding Bokning.StartDatum}" />
+                    <GridViewColumn Header="SlutDatum" Width="100" DisplayMemberBinding="{Binding Bokning.SlutDatum}" />
+                    <GridViewColumn Header="Adress" Width="100" DisplayMemberBinding="{Binding Bostad.Adress}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Grid.Column="2"  Padding="16" Text="Bokningar med relevans för dig" TextAlignment="Center" FontSize="25" FontWeight="Normal" FontFamily="X-Files" Grid.ColumnSpan="3" Margin="111,-9,73.333,11" Grid.RowSpan="2"/>
+
+        <Button Grid.Row="3" Grid.Column="3" Content="Välj bokning" Command="{Binding OpenNewHanteraEnBokningCommand}"  Padding="10" FontSize="14" RenderTransformOrigin="1.236,-1.011" Margin="84.667,37,60.333,62.667"/>
+    </Grid>
+</Window>
